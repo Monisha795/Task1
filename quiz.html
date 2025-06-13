@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Take Quiz</title>
+</head>
+<body>
+    <h1>Take the Flashcard Quiz</h1>
+    <form method="post">
+        {% for idx, card in enumerate(flashcards) %}
+            <p>
+                <strong>Q{{ idx + 1 }}:</strong> {{ card.question }}<br>
+                Your Answer: <input type="text" name="{{ idx }}">
+            </p>
+        {% endfor %}
+        <input type="submit" value="Submit Quiz">
+    </form>
+    <br>
+    <a href="/">← Back to Home</a>
+</body>
+</html>

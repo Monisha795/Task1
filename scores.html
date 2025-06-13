@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Scores</title>
+</head>
+<body>
+    <h1>Previous Quiz Scores</h1>
+    {% if scores %}
+        <ul>
+            {% for s in scores %}
+                <li>Score: {{ s }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No scores recorded yet.</p>
+    {% endif %}
+    <a href="/">← Back to Home</a>
+</body>
+</html>

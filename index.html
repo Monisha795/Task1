@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flashcard Quiz App</title>
+</head>
+<body>
+    <h1>Flashcard Quiz App</h1>
+
+    <h2>Add a Flashcard</h2>
+    <form action="/add" method="post">
+        Question: <input type="text" name="question" required><br>
+        Answer: <input type="text" name="answer" required><br>
+        <input type="submit" value="Add Flashcard">
+    </form>
+
+    <h2>Available Flashcards</h2>
+    <ul>
+        {% for card in flashcards %}
+            <li>{{ card.question }} - {{ card.answer }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/quiz">Take Quiz</a> | <a href="/scores">View Scores</a>
+</body>
+</html>
